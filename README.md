@@ -1,6 +1,6 @@
 # magnet-api-proxy
 
-Simple unofficial API which interfaces [MagnetDl](https://www.magnetdl.com/) (currently more coming soom) & [OMDb](https://www.omdbapi.com/); deployable and tested using [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
+Simple unofficial API which interfaces [MagnetDl](https://www.magnetdl.com/) (currently more coming soon) & [OMDb](https://www.omdbapi.com/); deployable and tested using [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
  
 ## Getting started
 
@@ -22,7 +22,7 @@ npm ci
 npm run test:server
 ```
 
-## Working/Developing locally
+## Generate Deployable ZIP 
 
 ```bash
 npm run build
