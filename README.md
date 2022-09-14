@@ -1,6 +1,6 @@
 # magnet-api-proxy
 
-Simple unofficial API which interfaces [MagnetDl](https://www.magnetdl.com/) (currently more coming soon) & [OMDb](https://www.omdbapi.com/); deployable and tested using [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
+Simple unofficial API which interfaces [MagnetDl](https://www.magnetdl.com/) (more coming soon) & [OMDb](https://www.omdbapi.com/); deployable and tested using [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
  
 ## Getting started
 
