@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/lambda.js",
+    "test:server": "nodemon ./test/server.js",
+    "build": "rm -f -R node_modules && rm -f bundle.zip && npm ci --production && zip -r -x '/test/*' -x '/src/stubs/*' -x '.editorconfig' -x '.env' -x '.gitattributes' -x '.gitignore' -x 'README.md' -X bundle.zip *"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "jsdom": "^20.0.0",
+    "socks-proxy-agent": "^7.0.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.1214.0",
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.19"
+  }
+}
