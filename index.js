@@ -3,7 +3,8 @@ const MagnetDL = new (require("./src/utils/magnetdl.js"))(null);
 
 exports.handler = async (event) => {
 
-  const { path, method } = event;
+  const { path } = event;
+  const method = event.method || event.httpMethod;
 
   if (["OPTIONS"].indexOf(method) !== -1) {
     return network.response.cors();
