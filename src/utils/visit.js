@@ -24,7 +24,7 @@ const visit = (url, agent) => {
 
   return new Promise((resolve, reject) => {
 
-    const { hostname, pathname: path, search } = new URL(url);
+    let { hostname, pathname: path, search } = new URL(url);
 
     if (search) path = path + search;
 
