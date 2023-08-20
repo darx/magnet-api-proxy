@@ -4,7 +4,26 @@ try {
 
 const lambda = require("../index");
 
-const test = {
+async function main() {
+
+  const response = await lambda.handler({
+    path: "/magnet/category/movies/1"
+  });
+
+  const body = JSON.parse(response.body);
+
+  const [item] = body;
+
+  Object.keys(item).forEach(x => {
+    if (typeof item[x] !== test[x]) {
+      throw new Error("Exspected type was not returned");
+    };
+  });
+
+  return true;
+}
+
+main({
   id: "string",
   magnet: "string",
   title: "string",
@@ -14,28 +33,4 @@ const test = {
   ms: "number",
   seeders: "number",
   leechers: "number"
-};
-
-(async () => {
-  const response = await lambda.handler({
-    path: "/magnetdl/movies/1"
-  });
-
-  try {
-
-    const body = JSON.parse(response.body);
-
-    const [item] = body;
-
-    Object.keys(item).forEach(x => {
-      if (typeof item[x] !== test[x]) {
-        throw new Error("Exspected type was not returned");
-      };
-    });
-
-    console.log("!! TEST PASSED !!", item, test, "!! TEST PASSED !!");
-  } catch (e) {
-    console.error(e);
-  }
-
-})();
+}).then(console.log).catch(console.warn);
