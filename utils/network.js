@@ -87,6 +87,9 @@ request.payload = async (request) => {
 };
 
 request.cached = async (key) => {
+
+  if (!process.env.AWS_S3_CACHE_BUCKET) return null;
+
   try {
     const command = new GetObjectCommand({
       Bucket: process.env.AWS_S3_CACHE_BUCKET,
